@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: quivercrm
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: UPSTASH_REDIS_REST_URL
+        sync: false
+      - key: UPSTASH_REDIS_REST_TOKEN
+        sync: false
+      - key: UPSTASH_DATA_KEY
+        value: quivercrm:data:v2
+      - key: JWT_SECRET
+        sync: false
+      - key: SETUP_KEY
+        sync: false
+      - key: INTEGRATION_KEY
+        sync: false
